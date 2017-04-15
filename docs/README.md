@@ -36,6 +36,7 @@ Nodeアプリケーションのための練習プログラム集
 
 ## 開発
 ### [FizzBuzz](./dev/fizz_buzz.md)
+### [素数を作る](./dev/generate_primes.md)
 
 **[⬆ back to top](#構成)**
 
