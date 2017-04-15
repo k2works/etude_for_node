@@ -1,10 +1,11 @@
 class GeneratePrimes {
     static generatePrimes(maxValue) {
         let primes;
+        let s = maxValue + 1; // 配列のサイズ
         if (maxValue < 2) {
             return new Array(0);
         } else {
-            let {s, f} = GeneratePrimes.initializedSieve(maxValue);
+            let f = GeneratePrimes.initializeArray(s);
             GeneratePrimes.sieve(s, f);
             primes = GeneratePrimes.loadPrimes(s, f);
             return primes; // 素数を返す
@@ -47,18 +48,12 @@ class GeneratePrimes {
         return j;
     }
 
-    static initializedSieve(maxValue) {
-        // 宣言
-        let s = maxValue + 1; // 配列のサイズ
-        let f;
-
-        // 配列を真(true)に初期化
-        f = Array.apply(null, Array(s)).map(function () {
+    static initializeArray(s) {
+        let f = Array.apply(null, Array(s)).map(function () {
             return true
         });
-        // 周知の非素数を取り除く
-        f[0] = f[1] = false;
-        return {s, f};
+        f[0] = f[1] = false; // 素数でも倍数でもない
+        return f;
     }
 }
 export default GeneratePrimes;
