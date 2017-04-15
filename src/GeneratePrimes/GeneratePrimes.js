@@ -1,14 +1,13 @@
 class GeneratePrimes {
     static generatePrimes(maxValue) {
-        if (maxValue >= 2) {  // 有効なケース？
+        if (maxValue < 2) {
+            return new Array(0);
+        } else {
             let {s, f} = GeneratePrimes.initializedSieve(maxValue);
             let j = GeneratePrimes.sieve(s, f);
             let primes = GeneratePrimes.loadPrimes(s, f, j);
             return primes; // 素数を返す
         }
-        else {
-            return new Array(0); // 入力が不適切な場合nullを戻す
-        }// maxValue < 2
     }
 
     static loadPrimes(s, f, j) {
