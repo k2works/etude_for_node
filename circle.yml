@@ -5,8 +5,17 @@ machine:
     - npm install -g npm@3
   timezone: Asia/Tokyo
 
-  test:
-    pre:
-      - yarn
-    override:
-      - npm test
+test:
+  pre:
+    - yarn
+  override:
+    - npm test
+
+deployment:
+  npm:
+    branch: master
+    commands:
+      # login using environment variables
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
+      - npm run build
+      - npm run deploy

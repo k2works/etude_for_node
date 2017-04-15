@@ -30,6 +30,7 @@ Nodeアプリケーションのための練習プログラム集
 ## 配置
 ### [CircleCI配置](./ops/ship_circleci.md)
 ### [Jenkins配置](./ops/ship_jenkins.md)
+### [npmパッケージの配置](./ops/ship_npm.md)
 
 **[⬆ back to top](#構成)**
 
