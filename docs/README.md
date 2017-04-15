@@ -34,7 +34,7 @@ Nodeアプリケーションのための練習プログラム集
 **[⬆ back to top](#構成)**
 
 ## 開発
-### [FizzBuzz](./ops/dev/fizz_buzz.md)
+### [FizzBuzz](./dev/fizz_buzz.md)
 
 **[⬆ back to top](#構成)**
 
