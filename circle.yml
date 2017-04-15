@@ -4,3 +4,9 @@ machine:
   post:
     - npm install -g npm@3
   timezone: Asia/Tokyo
+
+  test:
+    pre:
+      - yarn
+    override:
+      - npm test
