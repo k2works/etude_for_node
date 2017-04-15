@@ -1,35 +1,18 @@
 Etude for Node
-===================
+---
 
-# 目的 #
-Nodeアプリケーションのための練習プログラム集
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-# 前提 #
-| ソフトウェア   | バージョン   | 備考        |
-|:---------------|:-------------|:------------|
-| node           |7.9.0    |             |
-| npm            |3.10.10  |             |
-| yarn           |0.18.1   |             |
-| vagrant        |1.8.7    |             |
-| docker         |17.03.1  |             |
-| docker-compose |1.8.0    |             |
+## What's this
 
-# 構成 #
-1. [構築](#構築)
-1. [配置](#配置)
-1. [開発](#開発)
-1. [運用](#運用)
+## Install
 
-## 構築
-**[⬆ back to top](#構成)**
+## Usage
 
-## 配置
-**[⬆ back to top](#構成)**
+## Development
 
-## 開発
-**[⬆ back to top](#構成)**
+## [Documents](./docs/README.md)
 
-## 運用
-**[⬆ back to top](#運用)**
+## License
 
-# 参照 #
+MIT. Copyright (c) [k2works](http://feross.org).
