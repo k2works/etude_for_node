@@ -21,9 +21,16 @@ Nodeアプリケーションのための練習プログラム集
 1. [運用](#運用)
 
 ## 構築
+### [開発用仮想マシン構築](./ops/build_vagrant.md)
+### [開発用コンテナ構築](./ops/build_docker.md)
+### [npmアプリケーションの構築](./ops/build_npm.md)
+
 **[⬆ back to top](#構成)**
 
 ## 配置
+### [CircleCI配置](./ops/ship_circleci.md)
+### [Jenkins配置](./ops/ship_jenkins.md)
+
 **[⬆ back to top](#構成)**
 
 ## 開発

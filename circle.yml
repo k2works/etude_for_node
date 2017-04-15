@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 7.9.0
+  post:
+    - npm install -g npm@3
+  timezone: Asia/Tokyo
+
+  test:
+    pre:
+      - yarn
+    override:
+      - npm test
