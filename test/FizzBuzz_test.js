@@ -15,5 +15,16 @@ describe('FizzBuzz', () => {
             let fb = new FizzBuzz(15);
             assert(fb.execute() === 'FizzBuzz');
         });
+        it('should return Nothing when it does not satisfy the specification', () => {
+            let fb = new FizzBuzz(1);
+            assert(fb.execute() === 'Nothing');
+        });
+        it('should return Fizz,Buzz,FizzBuzz,Nothing while 100 times', () => {
+            for(let i = 1; i <= 100; i++) {
+                let fb = new FizzBuzz(i);
+                console.log(i + ':' + fb.execute());
+            }
+
+        })
     });
 });

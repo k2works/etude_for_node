@@ -3,7 +3,7 @@ class FizzBuzz {
         this.itsNumber = number;
     }
     execute() {
-        let ret;
+        let ret = 'Nothing';
         if (this.itsNumber % 3 === 0) {
             ret = 'Fizz';
         }
