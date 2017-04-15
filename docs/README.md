@@ -23,6 +23,7 @@ Nodeアプリケーションのための練習プログラム集
 ## 構築
 ### [開発用仮想マシン構築](./ops/build_vagrant.md)
 ### [開発用コンテナ構築](./ops/build_docker.md)
+### [npmアプリケーションの構築](./ops/build_npm.md)
 
 **[⬆ back to top](#構成)**
 
