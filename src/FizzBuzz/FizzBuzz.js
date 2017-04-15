@@ -1,5 +1,5 @@
-class FizzBUzz {
+class FizzBuzz {
     execute() {
-        0
     }
 }
+export default FizzBuzz;
