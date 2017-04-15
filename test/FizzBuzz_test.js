@@ -8,7 +8,7 @@ describe('FizzBuzz', () => {
             assert(fb.execute() === 'Fizz');
         });
         it('should return Buzz when it can be divided five', () => {
-            let fb = new FizzBuzz();
+            let fb = new FizzBuzz(5);
             assert(fb.execute() === 'Buzz');
         });
         it('should return FizzBuzz when it can be divided three and five', () => {

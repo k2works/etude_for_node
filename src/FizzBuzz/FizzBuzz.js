@@ -7,6 +7,9 @@ class FizzBuzz {
         if (this.itsNumber % 3 === 0) {
             ret = 'Fizz';
         }
+        if (this.itsNumber % 5 === 0) {
+            ret = 'Buzz';
+        }
         return ret;
     }
 }
