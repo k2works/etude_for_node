@@ -5,11 +5,33 @@ class GeneratePrimes {
         if (maxValue < 2) {
             return new Array(0);
         } else {
-            let f = GeneratePrimes.initializeArray(s);
-            GeneratePrimes.sieve(s, f);
-            primes = GeneratePrimes.loadPrimes(s, f);
+            let f = this.initializeArray(s);
+            this.sieve(s, f);
+            primes = this.loadPrimes(s, f);
             return primes; // 素数を返す
         }
+    }
+
+    static initializeArray(s) {
+        let f = Array.apply(null, Array(s)).map(function () {
+            return true
+        });
+        f[0] = f[1] = false; // 素数でも倍数でもない
+        return f;
+    }
+
+    static sieve(s, f) {
+        // ふるい落とす
+        let i;
+        let j;
+        for (i = 2; i < Math.sqrt(s) + 1; i++) {
+            if (f[i]) { // iが除かれていなければ、その倍数を除く
+                for (j = 2 * i; j < s; j += i) {
+                    f[j] = false; // 倍数は素数ではない
+                }
+            }
+        }
+        return j;
     }
 
     static loadPrimes(s, f) {
@@ -32,28 +54,6 @@ class GeneratePrimes {
             }
         }
         return primes;
-    }
-
-    static sieve(s, f) {
-        // ふるい落とす
-        let i;
-        let j;
-        for (i = 2; i < Math.sqrt(s) + 1; i++) {
-            if (f[i]) { // iが除かれていなければ、その倍数を除く
-                for (j = 2 * i; j < s; j += i) {
-                    f[j] = false; // 倍数は素数ではない
-                }
-            }
-        }
-        return j;
-    }
-
-    static initializeArray(s) {
-        let f = Array.apply(null, Array(s)).map(function () {
-            return true
-        });
-        f[0] = f[1] = false; // 素数でも倍数でもない
-        return f;
     }
 }
 export default GeneratePrimes;
