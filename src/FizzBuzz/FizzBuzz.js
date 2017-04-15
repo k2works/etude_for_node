@@ -10,6 +10,9 @@ class FizzBuzz {
         if (this.itsNumber % 5 === 0) {
             ret = 'Buzz';
         }
+        if (this.itsNumber % 3 === 0 && this.itsNumber % 5 === 0) {
+            ret = 'FizzBuzz';
+        }
         return ret;
     }
 }
