@@ -1,17 +1,19 @@
 class GeneratePrimes {
     static generatePrimes(maxValue) {
+        let primes;
         if (maxValue < 2) {
             return new Array(0);
         } else {
             let {s, f} = GeneratePrimes.initializedSieve(maxValue);
-            let j = GeneratePrimes.sieve(s, f);
-            let primes = GeneratePrimes.loadPrimes(s, f, j);
+            GeneratePrimes.sieve(s, f);
+            primes = GeneratePrimes.loadPrimes(s, f);
             return primes; // 素数を返す
         }
     }
 
-    static loadPrimes(s, f, j) {
+    static loadPrimes(s, f) {
         let i;
+        let j;
         // 見つけた素数の個数をカウント
         let count = 0;
         for (i = 0; i < s; i++) {
@@ -49,7 +51,6 @@ class GeneratePrimes {
         // 宣言
         let s = maxValue + 1; // 配列のサイズ
         let f;
-        let i;
 
         // 配列を真(true)に初期化
         f = Array.apply(null, Array(s)).map(function () {
