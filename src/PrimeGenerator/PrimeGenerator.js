@@ -1,4 +1,4 @@
-class GeneratePrimes {
+class PrimeGenerator {
     static generatePrimes(maxValue) {
         let crossedOut = Array.apply(null,new Array(maxValue + 1)).map(function () { return true });
         if (maxValue < 2) {
@@ -59,4 +59,4 @@ class GeneratePrimes {
         }
     }
 }
-export default GeneratePrimes;
+export default PrimeGenerator;
