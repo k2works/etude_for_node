@@ -24,7 +24,7 @@ describe('GeneratePrimes', () => {
             assert(threeArray[0] === 2);
             assert(threeArray[1] === 3);
         });
-        it('return ten array', () => {
+        it('return four array', () => {
             let centArray = GeneratePrimes.generatePrimes(10);
             assert(centArray.length === 4);
         });
