@@ -43,5 +43,17 @@ describe('GeneratePrimes', () => {
             let threeArray = GeneratePrimes.generatePrimes(100);
             assert(threeArray[24] === 97);
         });
+        context('test exhaustive', () => {
+            it('verify prime list', () => {
+                for(let i = 2; i < 100; i++) {
+                    let list = GeneratePrimes.generatePrimes(i);
+                    for(let i=0; i<list.length; i++) {
+                        for(let factor=2; factor<list[i]; factor++) {
+                            assert(list[i]%factor !== 0);
+                        }
+                    }
+                }
+            });
+        });
     });
 });

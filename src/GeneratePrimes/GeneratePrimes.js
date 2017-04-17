@@ -1,59 +1,59 @@
 class GeneratePrimes {
     static generatePrimes(maxValue) {
-        let isCrossed = Array.apply(null,new Array(maxValue + 1)).map(function () { return true });
+        let crossedOut = Array.apply(null,new Array(maxValue + 1)).map(function () { return true });
         if (maxValue < 2) {
             return new Array(0);
         } else {
-            this.initializeArrayOfInteger(isCrossed);
-            this.crossOutMultiples(isCrossed);
-            return this.putUncrossedIntegersIntoResult(isCrossed);
+            this.uncrossIntegersUpTo(crossedOut);
+            this.crossOutMultiples(crossedOut);
+            return this.putUncrossedIntegersIntoResult(crossedOut);
         }
     }
 
-    static initializeArrayOfInteger(isCrossed) {
-        for(let i = 2; i < isCrossed.length; i++)
-            isCrossed[i] = false;
+    static uncrossIntegersUpTo(crossedOut) {
+        for(let i = 2; i < crossedOut.length; i++)
+            crossedOut[i] = false;
     }
 
-    static crossOutMultiples(isCrossed) {
-        let maxPrimeFactor = this.calcMaxPrimeFactor(isCrossed);
+    static crossOutMultiples(crossedOut) {
+        let maxPrimeFactor = this.determineIterationLimit(crossedOut);
         for(let i = 2; i <= maxPrimeFactor; i++) {
-            if(this.notCrossed(isCrossed, i)) {
-                this.crossOutMultiplesOf(i, isCrossed);
+            if(this.notCrossed(crossedOut, i)) {
+                this.crossOutMultiplesOf(i, crossedOut);
             }
         }
     }
 
-    static putUncrossedIntegersIntoResult(isCrossed) {
-        let result = new Array(this.numberOfUncrossedIntegers(isCrossed));
-        for (let i = 0, j = 0; i < isCrossed.length; i++) {
-            if (this.notCrossed(isCrossed, i)) {
+    static putUncrossedIntegersIntoResult(crossedOut) {
+        let result = new Array(this.numberOfUncrossedIntegers(crossedOut));
+        for (let i = 0, j = 0; i < crossedOut.length; i++) {
+            if (this.notCrossed(crossedOut, i)) {
                 result[j++] = i;
             }
         }
         return result;
     }
 
-    static calcMaxPrimeFactor(isCrossed) {
-        return Math.sqrt(isCrossed.length) + 1;
+    static determineIterationLimit(crossedOut) {
+        return Math.sqrt(crossedOut.length) + 1;
     }
 
-    static notCrossed(isCrossed, i) {
-        return isCrossed[i] === false;
+    static notCrossed(crossedOut, i) {
+        return crossedOut[i] === false;
     }
 
-    static crossOutMultiplesOf(i, isCrossed) {
+    static crossOutMultiplesOf(i, crossedOut) {
         for (let multiple = 2 * i;
-             multiple < isCrossed.length;
+             multiple < crossedOut.length;
              multiple += i) {
-            isCrossed[multiple] = true;
+            crossedOut[multiple] = true;
         }
     }
 
-    static numberOfUncrossedIntegers(isCrossed) {
+    static numberOfUncrossedIntegers(crossedOut) {
         let count = 0;
-        for (let i = 0; i < isCrossed.length; i++) {
-            if (!isCrossed[i]) {
+        for (let i = 0; i < crossedOut.length; i++) {
+            if (!crossedOut[i]) {
                 count++;
             }
         }
