@@ -7,7 +7,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('compile', () => {
-    return gulp.src('src/*.js')
+    return gulp.src('src/**/*.js')
         .pipe(babel({
             plugins: ['add-module-exports']
         }))
