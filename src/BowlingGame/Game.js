@@ -10,5 +10,9 @@ class Game {
     add(pins) {
         this.its_score = pins;
     }
+
+    scoreForFrame(theFrame) {
+        return 0;
+    }
 }
 export default Game;
