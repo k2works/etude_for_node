@@ -18,12 +18,19 @@ class Game {
     scoreForFrame(theFrame) {
         let ball = 0;
         let score = 0;
+        let frameScore = 0;
         for (let currentFrame = 0; currentFrame < theFrame; currentFrame++) {
             let firstThrow = this.itsThrows[ball];
             ball += 1;
             let secondThrow = this.itsThrows[ball];
             ball += 1;
-            score += firstThrow + secondThrow;
+            frameScore = firstThrow + secondThrow;
+
+            if (frameScore == 10) {
+                score += frameScore + this.itsThrows[ball];
+            } else {
+                score += frameScore
+            }
         }
         return score;
     }

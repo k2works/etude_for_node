@@ -25,7 +25,10 @@ describe('Game', () => {
         });
 
         it('scored when spare', () => {
-
+            g.add(3);
+            g.add(7);
+            g.add(3);
+            assert(g.scoreForFrame(1) === 13);
         });
     });
 });
