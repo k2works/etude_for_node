@@ -13,13 +13,7 @@ describe('Game', () => {
             assert(g.score() === 5);
         });
 
-        it('scored when spare', () => {
-            g.add(3);
-            g.add(7);
-            g.add(3);
-            g.add(2);
-            assert(g.score() === 18);
-        });
+        it('scored when spare', () => {});
     });
 
     describe('#scoreForFrame', () => {
@@ -38,6 +32,7 @@ describe('Game', () => {
             g.add(3);
             g.add(2);
             assert(g.scoreForFrame(1) === 13);
+            assert(g.scoreForFrame(2) === 18);
         });
     });
 });
