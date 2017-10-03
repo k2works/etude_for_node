@@ -2,9 +2,13 @@ import assert from 'power-assert';
 import Game from '../src/BowlingGame/Game';
 
 describe('Game', () => {
+    let g;
+    beforeEach(() => {
+        g = new Game();
+    });
+
     describe('#score', () => {
         it('scored when one throw', () => {
-            let g = new Game();
             g.add(5);
             assert(g.score() === 5);
         });
@@ -12,7 +16,6 @@ describe('Game', () => {
 
     describe('#scoreForFrame', () => {
         it('scored when four throws', () => {
-            let g = new Game();
             g.add(5);
             g.add(4);
             g.add(7);
@@ -22,7 +25,7 @@ describe('Game', () => {
         });
 
         it('scored when spare', () => {
-            let g = new Game();
+
         });
     });
 });
