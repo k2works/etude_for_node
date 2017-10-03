@@ -1,7 +1,7 @@
 import assert from 'power-assert';
 import Game from '../src/BowlingGame/Game';
 
-describe('BowlingGame', () => {
+describe('Game', () => {
     describe('#score', () => {
         it('scored when one throw', () => {
             let g = new Game();
@@ -19,6 +19,10 @@ describe('BowlingGame', () => {
             g.add(2);
             assert(g.scoreForFrame(1) === 9);
             assert(g.scoreForFrame(2) === 18);
+        });
+
+        it('scored when spare', () => {
+            let g = new Game();
         });
     });
 });
