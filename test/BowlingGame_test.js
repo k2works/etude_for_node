@@ -35,4 +35,11 @@ describe('Game', () => {
             assert(g.scoreForFrame(2) === 18);
         });
     });
+
+    describe('#getCurrentFrame', () => {
+        it('return first frame when one throw', () => {
+            g.add(5);
+            assert(g.getCurrentFrame(1) === 1);
+        });
+    });
 });
