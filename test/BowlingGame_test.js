@@ -39,7 +39,13 @@ describe('Game', () => {
     describe('#getCurrentFrame', () => {
         it('return first frame when one throw', () => {
             g.add(5);
-            assert(g.getCurrentFrame(1) === 1);
+            assert(g.getCurrentFrame() === 1);
         });
+
+        it('return first frame when two throw', () => {
+            g.add(5);
+            g.add(4);
+            assert(g.getCurrentFrame() === 1);
+        })
     });
 });
