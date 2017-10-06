@@ -2,7 +2,9 @@ class Game {
     constructor() {
         this.itsScore = 0;
         this.itsCurrentThrow = 0;
-        this.itsThrows = Array.apply(null, Array(21)).map(function() { return 0 });
+        this.itsThrows = Array.apply(null, Array(21)).map(function () {
+            return 0
+        });
         this.itsCurrentFrame = 0;
         this.itsFirstThrow = true;
     }
@@ -15,13 +17,7 @@ class Game {
         this.itsThrows[this.itsCurrentThrow] = pins;
         this.itsCurrentThrow += 1;
         this.itsScore += pins;
-
-        if (this.itsFirstThrow == true) {
-            this.itsCurrentFrame += 1;
-            this.itsFirstThrow = false;                        
-        } else {
-            this.itsFirstThrow = true;
-        }
+        this._adjustCurrentFrame();
     }
 
     scoreForFrame(theFrame) {
@@ -47,5 +43,16 @@ class Game {
     getCurrentFrame() {
         return this.itsCurrentFrame;
     }
+
+
+    _adjustCurrentFrame() {
+        if (this.itsFirstThrow == true) {
+            this.itsCurrentFrame += 1;
+            this.itsFirstThrow = false;
+        } else {
+            this.itsFirstThrow = true;
+        }
+    }
+
 }
 export default Game;
