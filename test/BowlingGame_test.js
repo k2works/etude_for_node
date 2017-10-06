@@ -46,6 +46,14 @@ describe('Game', () => {
             g.add(5);
             g.add(4);
             assert(g.getCurrentFrame() === 1);
-        })
+        });
+
+        it('return scond frame when spare', () => {
+            g.add(3);
+            g.add(7);
+            g.add(3);
+            g.add(2);
+            assert(g.getCurrentFrame() === 2);
+        });
     });
 });
