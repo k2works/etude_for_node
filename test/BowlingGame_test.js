@@ -15,6 +15,13 @@ describe('Game', () => {
             g.add(2);
             assert(g.score() === 18);
         });
+
+        it('scored when strike', () => {
+            g.add(10);
+            g.add(3);
+            g.add(6);
+            assert(g.score() === 28);
+        });
     });
 
     describe('#scoreForFrame', () => {
@@ -34,6 +41,13 @@ describe('Game', () => {
             g.add(2);
             assert(g.scoreForFrame(1) === 13);
             assert(g.scoreForFrame(2) === 18);
+        });
+
+        it('scored when strike', () => {
+            g.add(10);
+            g.add(3);
+            g.add(6);
+            assert(g.scoreForFrame(1) === 19);
         });
     });
 
