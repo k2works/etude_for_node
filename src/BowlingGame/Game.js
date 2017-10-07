@@ -10,7 +10,7 @@ class Game {
     }
 
     score() {
-        return this.scoreForFrame(this.getCurrentFrame() -1);
+        return this.scoreForFrame(this.getCurrentFrame() - 1);
     }
 
     add(pins) {
@@ -27,14 +27,22 @@ class Game {
         for (let currentFrame = 0; currentFrame < theFrame; currentFrame++) {
             let firstThrow = this.itsThrows[ball];
             ball += 1;
-            let secondThrow = this.itsThrows[ball];
-            ball += 1;
-            frameScore = firstThrow + secondThrow;
 
-            if (frameScore == 10) {
-                score += frameScore + this.itsThrows[ball];
+            if (firstThrow == 10) {
+                let secondThrow = this.itsThrows[ball];
+                let thirdThrow = this.itsThrows[ball + 1];
+                frameScore = firstThrow + secondThrow + thirdThrow;
+                score = frameScore;
             } else {
-                score += frameScore
+                let secondThrow = this.itsThrows[ball];
+                ball += 1;
+                frameScore = firstThrow + secondThrow;
+
+                if (frameScore == 10) {
+                    score += frameScore + this.itsThrows[ball];
+                } else {
+                    score += frameScore
+                }
             }
         }
         return score;
@@ -47,9 +55,14 @@ class Game {
 
     _adjustCurrentFrame() {
         if (this.itsFirstThrow == true) {
-            this.itsFirstThrow = false;
+            if (this.itsThrows[this.itsCurrentThrow - 1] == 10) {
+                this.itsCurrentFrame += 1;
+                this.itsFirstThrow = true;
+            } else {
+                this.itsFirstThrow = false;
+            }            
         } else {
-            this.itsCurrentFrame += 1;            
+            this.itsCurrentFrame += 1;
             this.itsFirstThrow = true;
         }
     }
