@@ -48,6 +48,13 @@ describe('Game', () => {
             assert(g.getCurrentFrame() === 2);
         });
 
+        it('return second frame when spare', () => {
+            g.add(3);
+            g.add(7);
+            g.add(3);
+            assert(g.getCurrentFrame() === 2);
+        });
+
         it('return third frame when spare', () => {
             g.add(3);
             g.add(7);
