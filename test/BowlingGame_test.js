@@ -8,12 +8,13 @@ describe('Game', () => {
     });
 
     describe('#score', () => {
-        it('scored when one throw', () => {
-            g.add(5);
-            assert(g.score() === 5);
+        it('scored when spare', () => {
+            g.add(3);
+            g.add(7);
+            g.add(3);
+            g.add(2);
+            assert(g.score() === 18);
         });
-
-        it('scored when spare', () => {});
     });
 
     describe('#scoreForFrame', () => {

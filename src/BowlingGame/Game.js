@@ -10,7 +10,7 @@ class Game {
     }
 
     score() {
-        return this.itsScore;
+        return this.scoreForFrame(this.getCurrentFrame() -1);
     }
 
     add(pins) {
