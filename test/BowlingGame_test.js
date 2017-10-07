@@ -25,7 +25,7 @@ describe('Game', () => {
     });
 
     describe('#scoreForFrame', () => {
-        it('scored when four throws', () => {
+        it('scored by frame when four throws', () => {
             g.add(5);
             g.add(4);
             g.add(7);
@@ -34,7 +34,7 @@ describe('Game', () => {
             assert(g.scoreForFrame(2) === 18);
         });
 
-        it('scored when spare', () => {
+        it('scored by frame when spare', () => {
             g.add(3);
             g.add(7);
             g.add(3);
@@ -43,7 +43,7 @@ describe('Game', () => {
             assert(g.scoreForFrame(2) === 18);
         });
 
-        it('scored when strike', () => {
+        it('scored by frame when strike', () => {
             g.add(10);
             g.add(3);
             g.add(6);
