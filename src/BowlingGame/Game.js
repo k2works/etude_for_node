@@ -5,7 +5,7 @@ class Game {
         this.itsThrows = Array.apply(null, Array(21)).map(function () {
             return 0
         });
-        this.itsCurrentFrame = 0;
+        this.itsCurrentFrame = 1;
         this.itsFirstThrow = true;
     }
 
@@ -47,9 +47,9 @@ class Game {
 
     _adjustCurrentFrame() {
         if (this.itsFirstThrow == true) {
-            this.itsCurrentFrame += 1;
             this.itsFirstThrow = false;
         } else {
+            this.itsCurrentFrame += 1;            
             this.itsFirstThrow = true;
         }
     }

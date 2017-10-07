@@ -42,18 +42,18 @@ describe('Game', () => {
             assert(g.getCurrentFrame() === 1);
         });
 
-        it('return first frame when two throw', () => {
+        it('return second frame when two throw', () => {
             g.add(5);
             g.add(4);
-            assert(g.getCurrentFrame() === 1);
+            assert(g.getCurrentFrame() === 2);
         });
 
-        it('return scond frame when spare', () => {
+        it('return third frame when spare', () => {
             g.add(3);
             g.add(7);
             g.add(3);
             g.add(2);
-            assert(g.getCurrentFrame() === 2);
+            assert(g.getCurrentFrame() === 3);
         });
     });
 });
